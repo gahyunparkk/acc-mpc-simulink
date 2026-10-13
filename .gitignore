@@ -1,13 +1,13 @@
 # MATLAB / Simulink generated files
 slprj/
-codegen/
 *.slxc
 *.autosave
 *.asv
 *.m~
+*_grt_rtw/
+*_ert_rtw/
 
-# Simulink cache / generated artifacts
-*.slxc
+# Compiled / cache artifacts
 *.mex*
 
 # OS / editor
