@@ -44,8 +44,6 @@ acc-mpc-simulink/
 │   └── tcp_ip.slx        # TCP/IP 통신을 포함한 시뮬레이션 모델
 ├── codegen/
 │   └── Generation.slx    # 코드 생성을 위해 분리한 ACC System 모델
-├── docs/
-│   └── images/           # 각 SLX 파일에 저장된 모델 thumbnail
 ├── .gitignore
 └── README.md
 ```
@@ -58,15 +56,11 @@ acc-mpc-simulink/
 
 MPC 기반 Adaptive Cruise Control 블록을 적용하지 않은 기준 Simulink/PreScan 모델입니다.
 
-![non ACC model](docs/images/non_ACC.png)
-
 ### 2. `models/acc_mpc.slx`
 
 Simulink의 **Adaptive Cruise Control System** 블록을 적용한 MPC 기반 ACC 모델입니다.
 
 연구에서 사용한 MPC는 차량 간 거리와 상대 속도를 입력으로 사용해 목표 거리를 유지하도록 구성했습니다.
-
-![MPC ACC model](docs/images/acc_mpc.png)
 
 ### 3. `codegen/Generation.slx`
 
@@ -74,15 +68,11 @@ ACC 제어 로직을 별도로 구성해 **Embedded Coder 기반 Autocode Genera
 
 프로젝트에서는 생성된 코드를 AURIX Development Studio의 Infineon AURIX 프로젝트에 통합해 MCU 환경에서 검증했습니다.
 
-![code generation model](docs/images/Generation.png)
-
 ### 4. `models/tcp_ip.slx`
 
 외부 시스템과의 연동을 위해 **TCP/IP Receive** 등 통신 블록을 포함한 Simulink/PreScan 모델입니다.
 
 AURIX와 시뮬레이션 환경 간 데이터 연동을 위한 통신 구성을 확인할 수 있습니다.
-
-![TCP/IP model](docs/images/tcp_ip.png)
 
 ---
 
@@ -146,5 +136,4 @@ PreScan 주행 시나리오에서는 선행 차량에 시간에 따라 변화하
 ## Notes
 
 - `.slx`는 binary Simulink model 형식이므로 GitHub에서 코드 형태의 diff는 제한적입니다.
-- `docs/images/`의 이미지는 각 `.slx` 내부에 저장된 모델 thumbnail을 추출한 것입니다.
 - 외부 PreScan 리소스 및 로컬 시뮬레이션 설정 파일은 이 저장소에 포함되어 있지 않을 수 있습니다.
